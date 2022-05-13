@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'sreeharshav/pack-terr-jenkinsci-ssh-slave:v1' }
+    }
     stages {
     stage('Packer Build AMI') {
       when {
